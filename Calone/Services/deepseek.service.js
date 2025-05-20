@@ -2,6 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const analyzeResume = async (resumeText, jobDescription) => {
+  // console.log(resumeText, jobDescription);
   try {
     const response = await axios.post(
       "https://api.deepseek.com/v1/chat/completions",

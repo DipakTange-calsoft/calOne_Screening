@@ -15,7 +15,7 @@ app.use("/api", screeningRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
-  connectDB();
+  // connectDB();
   console.log(`Server running at http://localhost:${PORT}/`);
 });
 

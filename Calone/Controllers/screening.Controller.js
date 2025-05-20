@@ -1,15 +1,12 @@
 const { analyzeResume } = require("../Services/deepseek.service");
 const { parsePDF } = require("../Utils/pdfParser");
-const upload = require("../Configs/multer");
 const processResume = async (req, res) => {
   try {
     if (!req.file || !req.body.jobDescription) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-
     const resumeText = await parsePDF(req.file.buffer);
-
     const analysisResult = await analyzeResume(
       resumeText,
       req.body.jobDescription
