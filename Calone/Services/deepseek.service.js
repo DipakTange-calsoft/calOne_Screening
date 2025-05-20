@@ -11,8 +11,7 @@ const analyzeResume = async (resumeText, jobDescription) => {
         messages: [
           {
             role: "system",
-            content:
-              "You are a professional resume screening assistant. Analyze the resume against the job description and provide a matching score with detailed report.",
+            content: process.env.PROMPT,
           },
           {
             role: "user",
